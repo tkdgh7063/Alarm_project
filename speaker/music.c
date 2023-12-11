@@ -9,7 +9,7 @@ pid_t music(int stat){
     else if(pid == 0){
         char buf[1024];
         sprintf(buf,"%d",stat);
-        char* cmd[] = {"tone", buf, NULL};
+        char* cmd[] = {"speaker", buf, NULL};
         execv(cmd[0], cmd);
     }
     else{
