@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define TONE 19 // 스피커 GPIO
+#define TONE 16 // 스피커 GPIO -> pin 16으로 변경
 
 #define C 261
 #define D 293
@@ -20,7 +20,7 @@
 
 int main(int argc, char** argv){
 	wiringPiSetupGpio();
-  
+
 	softToneCreate(TONE);
 
 	while (1) {
