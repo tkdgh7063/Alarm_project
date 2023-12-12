@@ -55,12 +55,8 @@ void hc595_shift(unsigned char dat) {
 		digitalWrite(RCLK, 0);
 }
 
-void display(int hour, int min) {
-    int digits[] = [hour/10, hour%10, min/10, min%10];
-    // int digit1 = hour / 10;
-    // int digit2 = hour % 10;
-    // int digit3 = min / 10;
-    // int digit4 = min % 10;
+void displayTime(int hour, int min) {
+    int digits[] = {hour/10, hour%10, min/10, min%10};
 
     int i;
     for (i=0; i<4; i++) {
@@ -70,8 +66,15 @@ void display(int hour, int min) {
     }
 }
 
-void displayDigit(int segments) {
+void displayNum(int num) {
+    int digits[] = {num/1000, num%1000/100, num%100/10, num%10};
 
+    int i;
+    for (i=0; i<4; i++) {
+        clearDisplay();
+        pickDigit(i);
+        hc595_shift(digits[i]);
+    }
 }
 
 int main(void){
@@ -90,6 +93,5 @@ int main(void){
 			delay(500);
 		}
 	}
-
 	return 0;
 }

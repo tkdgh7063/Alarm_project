@@ -49,11 +49,42 @@ void FND_init() {
     pinMode(DIGIT_4, OUTPUT);
 }
 
-void display(int hour, int min) {
+void displayTime(int hour, int min) {
     int digit1 = hour / 10;
     int digit2 = hour % 10;
     int digit3 = min / 10;
     int digit4 = min % 10;
+
+    digitalWrite(DIGIT_1, HIGH);
+    digitalWrite(DIGIT_2, LOW);
+    digitalWrite(DIGIT_3, LOW);
+    digitalWrite(DIGIT_4, LOW);
+    displayDigit(SEGMENTS[digit1]);
+
+    digitalWrite(DIGIT_1, LOW);
+    digitalWrite(DIGIT_2, HIGH);
+    digitalWrite(DIGIT_3, LOW);
+    digitalWrite(DIGIT_4, LOW);
+    displayDigit(SEGMENTS[digit2]);
+
+    digitalWrite(DIGIT_1, LOW);
+    digitalWrite(DIGIT_2, LOW);
+    digitalWrite(DIGIT_3, HIGH);
+    digitalWrite(DIGIT_4, LOW);
+    displayDigit(SEGMENTS[digit3]);
+
+    digitalWrite(DIGIT_1, LOW);
+    digitalWrite(DIGIT_2, LOW);
+    digitalWrite(DIGIT_3, LOW);
+    digitalWrite(DIGIT_4, HIGH);
+    displayDigit(SEGMENTS[digit4]);
+}
+
+void displayNum(int num) {
+    int digit1 = num / 1000;
+    int digit2 = num % 1000 / 100;
+    int digit3 = num % 100 / 10;
+    int digit4 = num % 10;
 
     digitalWrite(DIGIT_1, HIGH);
     digitalWrite(DIGIT_2, LOW);
