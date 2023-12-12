@@ -23,43 +23,45 @@ int main(int argc, char** argv){
   
 	softToneCreate(TONE);
 
-	switch (atoi(argv[1])){
-	case 1:
-		softToneWrite(TONE, EE); delay(300);
-		softToneWrite(TONE, DD); delay(300);
-		softToneWrite(TONE, EE); delay(300);
-		softToneWrite(TONE, DD); delay(300);
-		softToneWrite(TONE, EE); delay(300);
-		softToneWrite(TONE, B); delay(300);
-		softToneWrite(TONE, DD); delay(300);
-		softToneWrite(TONE, CC); delay(300);
-		softToneWrite(TONE, A); delay(300);
-		break;
-	case 0:
-		softToneWrite(TONE, E); delay(200*2);
-		softToneWrite(TONE, F); delay(100*2);
-		softToneWrite(TONE, G); delay(200*2);
-		softToneWrite(TONE, A); delay(200*2);
-		softToneWrite(TONE, E); delay(100*2);
-		softToneWrite(TONE, G); delay(400*2);
-		softToneWrite(TONE, C); delay(400*2);
-		softToneWrite(TONE, CC); delay(33*2);
-		softToneWrite(TONE, CC); delay(33*2);
-		softToneWrite(TONE, CC); delay(33*2);
-		softToneWrite(TONE, B); delay(33*2);
-		softToneWrite(TONE, B); delay(33*2);
-		softToneWrite(TONE, B); delay(33*2);
-		softToneWrite(TONE, A); delay(33*2);
-		softToneWrite(TONE, A); delay(33*2);
-		softToneWrite(TONE, A); delay(133*2);
-		softToneWrite(TONE, E); delay(100*2);
-		softToneWrite(TONE, G); delay(400*2);
-		softToneWrite(TONE, F); delay(400*2);
-		break;
-	default:
-		break;
+	while (1) {
+		switch (atoi(argv[1])){
+		case 1:
+			softToneWrite(TONE, EE); delay(300);
+			softToneWrite(TONE, DD); delay(300);
+			softToneWrite(TONE, EE); delay(300);
+			softToneWrite(TONE, DD); delay(300);
+			softToneWrite(TONE, EE); delay(300);
+			softToneWrite(TONE, B); delay(300);
+			softToneWrite(TONE, DD); delay(300);
+			softToneWrite(TONE, CC); delay(300);
+			softToneWrite(TONE, A); delay(300);
+			break;
+		case 0:
+			softToneWrite(TONE, E); delay(200*2);
+			softToneWrite(TONE, F); delay(100*2);
+			softToneWrite(TONE, G); delay(200*2);
+			softToneWrite(TONE, A); delay(200*2);
+			softToneWrite(TONE, E); delay(100*2);
+			softToneWrite(TONE, G); delay(400*2);
+			softToneWrite(TONE, C); delay(400*2);
+			softToneWrite(TONE, CC); delay(33*2);
+			softToneWrite(TONE, CC); delay(33*2);
+			softToneWrite(TONE, CC); delay(33*2);
+			softToneWrite(TONE, B); delay(33*2);
+			softToneWrite(TONE, B); delay(33*2);
+			softToneWrite(TONE, B); delay(33*2);
+			softToneWrite(TONE, A); delay(33*2);
+			softToneWrite(TONE, A); delay(33*2);
+			softToneWrite(TONE, A); delay(133*2);
+			softToneWrite(TONE, E); delay(100*2);
+			softToneWrite(TONE, G); delay(400*2);
+			softToneWrite(TONE, F); delay(400*2);
+			break;
+		default:
+			break;
+		}
+		softToneWrite(TONE, 262);
 	}
-	softToneWrite(TONE, 262);
 
 	return 0;
 }
