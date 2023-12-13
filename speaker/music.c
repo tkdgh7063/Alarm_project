@@ -11,7 +11,7 @@ pid_t music(){
         char buf[1024];
         int r = rand() % 2;
         sprintf(buf,"%d",r);
-        char* cmd[] = {"tone", buf, NULL};
+        char* cmd[] = {"speaker", buf, NULL};
         execv(cmd[0], cmd);
     }
     else{
