@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <sys/types.h>
 
-pid_t music(int stat){
+pid_t music(){
     pid_t pid = fork();
     if(pid>0){
         return pid;
