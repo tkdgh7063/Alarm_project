@@ -11,7 +11,7 @@ extern const int adcChannel;
 extern int brightness;
 extern pthread_mutex_t lock_brightness;
 
-void init();
+void light_init();
 int getBrightness();
 
 #endif
